@@ -1,0 +1,34 @@
+﻿@model Aluguel
+
+@{
+    ViewData["Title"] = "Atualização de Aluguel";
+}
+
+<h4>
+    Atualizando filme @Model.id
+</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Atualizar">
+            <!--Esta linha aciona o metodo create passando os dados preenchidos nos formulários,
+    passando cada atributo conforme descrito no "asp-for"-->
+            <div class="form-group">
+                <label asp-for="devolucaoDias" class="control-label"></label>
+                <input asp-for="devolucaoDias" class="form-control" />
+                <span asp-validation-for="devolucaoDias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="filmeId" class="control-label"></label>
+                <select asp-for="filmeId" class="form-control" asp-items="@ViewBag.listaDeFilmes">
+                    <option value="">-- Selecione um filme --</option>
+                </select>
+                <span asp-validation-for="filmeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class="btn btn-success" />
+                <a asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Aluguel
+
+@{
+    ViewData["Title"] = "Visualizar Filmes";
+}
+
+<h4>Visualizando filme @Model.id </h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.filme.Titulo);</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.filme.Titulo)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.dataHora)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.dataHora)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.devolucao)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.devolucao)</dd>
+</dl>
+
+<hr />
+<iframe width="560" height="315" src="@Model.filme.Url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br/>
+<a asp-action="Index">Voltar</a>
